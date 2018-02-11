@@ -1,4 +1,4 @@
-gScp is a [Gradle](https://gradle.org/) plugin that simplifies file to remote ssh server
+gScp is a [Gradle](https://gradle.org/) plugin that simplifies upload file  to remote ssh server using scp (using [Jsch](http://www.jcraft.com/jsch/))
 
 ## Getting started
 ```
