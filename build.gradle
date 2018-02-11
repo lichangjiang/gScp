@@ -50,8 +50,8 @@ test {
 }
 
 pluginBundle {
-    website = 'https://plugins.gradle.org/u/lichangjiang'
-    vcsUrl = 'https://github.com/lichangjiang/gScp'
+    website = 'https://github.com/lichangjiang/gScp'
+    vcsUrl = 'https://github.com/lichangjiang/gScp.git'
 
     plugins {
         scpPlugin {
@@ -77,16 +77,11 @@ task createClasspathManifest {
     }
 }
 
-configurations {
-    // configuration that holds jars to include in the jar
-    extraLibs
-}
-
 dependencies {
     compile gradleApi()
     compile localGroovy()
+    compile group: 'com.jcraft', name: 'jsch', version: '0.1.54'
     testCompile gradleTestKit()
-    extraLibs fileTree(include: ['*.jar'], dir: 'libs')
     compile 'org.scala-lang:scala-library:2.11.8'
     testCompile 'junit:junit:4.12'
     testCompile 'org.scalatest:scalatest_2.11:3.0.4'
@@ -94,11 +89,5 @@ dependencies {
     testCompile 'org.scalatest:scalatest_2.11:3.0.1'
     testRuntime 'org.pegdown:pegdown:1.4.2'
     testRuntime files(createClasspathManifest)
-    configurations.compile.extendsFrom(configurations.extraLibs)
 }
 
-jar {
-    from {
-        configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
