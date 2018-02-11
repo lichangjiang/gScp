@@ -1,5 +1,5 @@
 group 'com.lcj.gradle.plugin'
-version '1.0-SNAPSHOT'
+version '0.1-SNAPSHOT'
 
 apply plugin: 'scala'
 apply plugin: 'groovy'
@@ -59,7 +59,7 @@ pluginBundle {
             displayName = "gscp"
             description = 'Using scp to upload file'
             tags = ['scp','upload']
-            version = '1.0-SNAPSHOT'
+            version = '0.1-SNAPSHOT'
         }
     }
 }

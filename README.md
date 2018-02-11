@@ -9,7 +9,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.lcj.gradle.plugin:uploadplugin:1.0-SNAPSHOT"
+    classpath "gradle.plugin.com.lcj.gradle.plugin:uploadplugin:0.1-SNAPSHOT"
   }
 }
 
