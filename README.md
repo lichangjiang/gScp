@@ -2,7 +2,19 @@ gScp is a [Gradle](https://gradle.org/) plugin that simplifies upload file  to r
 
 ## Getting started
 ```
-apply plugin:"com.lcj.gradle.plugin.upload"
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.com.lcj.gradle.plugin:uploadplugin:1.0-SNAPSHOT"
+  }
+}
+
+apply plugin: "com.lcj.gradle.plugin.upload"
+
 scpInfo {
     scpTo {
         userName = "YOUR_USER_NAME"

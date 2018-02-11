@@ -5,6 +5,7 @@ apply plugin: 'scala'
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'com.github.maiflai.scalatest'
+apply plugin: 'com.gradle.plugin-publish'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -17,6 +18,7 @@ buildscript {
     }
     dependencies {
         classpath "gradle.plugin.com.github.maiflai:gradle-scalatest:0.19"
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.10"
     }
 }
 
@@ -44,6 +46,21 @@ test {
         events "passed", "skipped", "failed"
         exceptionFormat "full"
         stackTraceFilters "entryPoint"
+    }
+}
+
+pluginBundle {
+    website = 'https://plugins.gradle.org/u/lichangjiang'
+    vcsUrl = 'https://github.com/lichangjiang/gScp'
+
+    plugins {
+        scpPlugin {
+            id = 'com.lcj.gradle.plugin.upload'
+            displayName = "gscp"
+            description = 'Using scp to upload file'
+            tags = ['scp','upload']
+            version = '1.0-SNAPSHOT'
+        }
     }
 }
 
