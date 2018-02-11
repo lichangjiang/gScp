@@ -1,0 +1,28 @@
+apply plugin : 'java'
+apply plugin :  "com.lcj.gradle.plugin.upload"
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url uri('/home/lichangjiang/repo')
+        }
+    }
+    dependencies {
+        classpath 'com.lcj.gradle.plugin:uploadplugin:1.0-SNAPSHOT'
+    }
+}
+
+
+scpInfo {
+    isScpTo = true
+    scpTo {
+        userName = "lichangjiang"
+        host = "67.218.148.213"
+        port = 27448
+        pwd = "lcj890712"
+        from = file("/home/lichangjiang/Desktop/words.txt")
+        to = "/home/lichangjiang"
+    }
+}
+

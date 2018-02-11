@@ -1,0 +1,15 @@
+plugins {
+    id "com.lcj.gradle.plugin.upload"
+}
+
+scpInfo {
+    isScpTo = true
+    scpTo {
+        userName = "lichangjiang"
+        host = "67.218.148.213"
+        port = 27448
+        pwd = "lcj890712"
+        from = file("/home/lichangjiang/Desktop/words.txt")
+        to = "/home/lichangjiang"
+    }
+}
